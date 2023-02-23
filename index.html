@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>Localstorage</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
-      <form id="studentForm">
-        <input type="text" placeholder="Student name" name="name" required />
+      <form id="studentForm" onsubmit="getInput(event)">
+        <input type="text" placeholder="Student name" name="username" required />
         <input type="email" placeholder="Email" name="email" required />
         <input type="number" placeholder="Phone Number" name="pnumber" required />
         <button>SUBMIT</button>
       </form>
-      <div class="students"></div>
+      <ul id="listofitems"></ul>
+      <!-- <div class="students" id="students"></div> -->
     </main>
     <script src="main.js"></script>
   </body>
