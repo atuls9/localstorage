@@ -25,6 +25,21 @@ function getInput(event) {
 
 }
 
+window.addEventListener("DOMContentLoaded",()=>{
+    axios.get("https://crudcrud.com/api/cf9ce9e963004965be5859e07b7f7539/atul")
+    .then((res)=>{
+        console.log(res);
+        res.data.forEach((ele)=>{
+            showOnScreen(ele)
+        })
+
+        
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+
 function showOnScreen(obj) {
     // e.preventDefault();
     var parentel = document.getElementById('listofitems');
