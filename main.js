@@ -60,10 +60,27 @@ function showOnScreen(obj) {
     editButton.type = 'button';
     editButton.value = "EDIT";
     editButton.onclick = (event) => {
-        localStorage.removeItem(obj.email);
-        parentel.removeChild(child);
-        console.log('aaaaaaa', obj.name)
-        document.getElementById('username').value = obj.name;
+       
+        
+        if(event.target==editButton){
+        let element = axios.get(`https://crudcrud.com/api/cf9ce9e963004965be5859e07b7f7539/atul/${obj._id}`)
+        .then((element)=>{
+            document.getElementById('username').value = element.name;
+            document.getElementById('email').value = element.email;
+            document.getElementById('pnumber').value = element.pnumber;
+            
+            // localStorage.removeItem(obj.email);
+            parentel.removeChild(child);
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        
+        // console.log('aaaaaaa', obj.name)
+
+
+        }
+        
     }
 
     // ----------------------------
