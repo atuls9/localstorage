@@ -10,8 +10,18 @@ function getInput(event) {
         email,
         pnumber
     }
-    localStorage.setItem(obj.email, JSON.stringify(obj));
-    showOnScreen(obj)
+
+    axios.post('https://crudcrud.com/api/cf9ce9e963004965be5859e07b7f7539/atul',obj)
+    .then((res)=>{
+        showOnScreen(res.data)
+        console.log(res.data)
+    })
+    .catch((err)=>{
+        document.body.innerHTML=document.body.innerHTML + `<h4>Something went wrong</h4>`
+        console.log(err)
+    })
+    // localStorage.setItem(obj.email, JSON.stringify(obj));
+    // showOnScreen(obj)
 
 }
 

@@ -22,10 +22,10 @@
     grid-area: roll;
   }
   
-  #studentForm button {
+  /* #studentForm button {
     grid-area: button;
   }
-  
+   */
   #studentForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
