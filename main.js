@@ -50,7 +50,8 @@ function showOnScreen(obj) {
     deleteButton.type = 'button';
     deleteButton.value = "DELETE";
     deleteButton.onclick = () => {
-        localStorage.removeItem(obj.email);
+        axios.delete(`https://crudcrud.com/api/cf9ce9e963004965be5859e07b7f7539/atul/${obj._id}`)
+        // localStorage.removeItem(obj.email);
         parentel.removeChild(child);
     }
 
